@@ -6,7 +6,7 @@ import React from 'react'
 
 const Trailer = () => {
 
-    let params = useParams();
+    let params = useParams(); 
     let key = params.ytTrailerId;
 
   return (
