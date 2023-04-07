@@ -35,14 +35,20 @@ function App() {
      
     try 
     {
-        const response = await api.get("http://localhost:8080/api/v1/movies/${movieId}");
-
+      console.log(movieId);
+        const response = await api.get(`http://localhost:8080/api/v1/movies/${movieId}`);
+        
+        console.log("response:"+ Object.keys(response));
+        console.log("response:"+ Object.values(response));
+        
+        // for(var i=0;)
         const singleMovie = response.data;
+        console.log(singleMovie);
 
         setMovie(singleMovie);
 
-        setReviews(singleMovie.reviews);
-        
+        setReviews(singleMovie.reviewIds);
+        console.log(Object.values(singleMovie.reviewIds));
 
     } 
     catch (error) 
